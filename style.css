@@ -1,0 +1,57 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+@font-face {
+    font-family: "outfit-medium";
+    src: url(/fonts/Outfit/static/Outfit-Medium.ttf);
+}
+body{
+    background-color: rgb(6, 6, 36);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    gap:60px;
+    
+}
+.top-bar{
+    background-color: rgb(2, 58, 58);
+    width:100%;
+    padding-top:20px;
+    padding-bottom: 20px;
+    
+}
+.main-section{
+    width:100%;
+    padding-right:clamp(30px,20vw,30vw);
+    padding-left:clamp(30px,20vw,30vw);
+    background-color: rgb(2, 58, 58);
+    box-sizing: border-box;
+    flex-grow:1;
+}
+.top-bar h1{
+    text-align: center;
+    font-size:3rem;
+    font-family: "outfit-medium",sans-serif;
+}
+.add-btn{
+    font-family: "outfit-medium",sans-serif ;
+    font-size:2.5rem;
+    padding:10px;
+    border-width:0px;
+    border-radius: 7px;
+}
+
+.book-container{
+   width:100%;
+   height:500px;
+    display:grid;
+   grid-template-rows: 1fr;
+   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+   grid-auto-rows: 1fr;
+   gap:40px;
+}
+.book-container div{
+    background-color: blueviolet;
+}
