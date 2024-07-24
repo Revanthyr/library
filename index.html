@@ -20,17 +20,24 @@
     </div>
     
     <dialog>
+        
         <form method = "dialog">
-            <label for=""></label>
-            <input type="text">
-            <label for=""></label>
-            <input type="text">
-            <label for=""></label>
-            <input type="text">
-            <label for=""></label>
-            <input type="text">
+            <h2>Add Book</h2>
+            
+            
+            <input type="text" placeholder="Title" name="title">
+           
+            <input type="text" placeholder="Author" name="author">
+           
+            <input type="number" placeholder="Pages" name="pages">
+            
+            <div class="container"> 
+                <label for="">Have you read it?</label>
+                <input type="checkbox" name="isread" id="checkbox">
+            </div>
+            <button class="close-btn">Submit</button>
+       
         </form>
-        <button class="close-btn">Close</button>
     </dialog>
 </body>
 </html>
