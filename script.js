@@ -27,10 +27,12 @@ let itemToRemove = {
  
 };
 let testcar = 5;
+const mainSection = document.querySelector(".main-section");
+const body = document.querySelector(".book-container");
 function showBooks(){
-    
+   body.innerHTML = "";
     library.map((book)=>{
-        const body = document.querySelector(".book-container");
+        
         const div= document.createElement("div");
         const docTitle =document.createElement("p");
         const docAuthor = document.createElement("p");
@@ -57,12 +59,14 @@ function showBooks(){
             if (docIsRead.classList.contains("read")){
                 docIsRead.classList.remove("read");
                 docIsRead.classList.add("notread");
-                docIsRead.textContent = "Not Read... Yet!"
+                docIsRead.textContent = "Not Read... Yet!";
+                book.isRead = false;
             }
             else if (docIsRead.classList.contains("notread")){
                 docIsRead.classList.remove("notread");
                 docIsRead.classList.add("read");
                 docIsRead.textContent = "Read";
+                book.isRead = true;
             }
         })
         div.appendChild(removeButton);
@@ -72,6 +76,7 @@ function showBooks(){
         removeButton.textContent = "Remove";
         removeButton.addEventListener("click",()=>{
             body.removeChild(removeButton.parentElement)
+            library.splice(library.indexOf(book),1);
              
         })
     })
@@ -84,18 +89,66 @@ showBooks();
 const addButton = document.querySelector(".add-btn");
 const dialog = document.querySelector("dialog");
 const closeButton = document.querySelector(".close-btn");
-
-closeButton.addEventListener("click",()=>{
+ closeButton.addEventListener("click",()=>{
     dialog.close();
-})
+}) 
 const page = document.querySelector("body");
 addButton.addEventListener("click",()=>{
     dialog.showModal();
 })
+
+const form=document.querySelector("form");
+
+const formAuthor = document.querySelector("#author");
+//formAuthor.setCustomValidity("Who's the author?")
+const formTitle = document.querySelector("#title");
+const formPages = document.querySelector("#number");
+const formIsRead = document.querySelector("#checkbox");
+const submitButton = document.querySelector(".submit-btn");
+submitButton.addEventListener("click",()=>{
+    formTitle.setCustomValidity("");
+        formAuthor.setCustomValidity("");
+        formPages.setCustomValidity("");
+    if (formTitle.validity.valueMissing == true){
+        event.preventDefault();
+        formTitle.setCustomValidity("What's the title?");
+    }
+    
+    else if (formAuthor.validity.valueMissing == true){
+        event.preventDefault();
+        formAuthor.setCustomValidity("Who's the author?");
+    }
+    else if (formPages.validity.valueMissing == true){
+        event.preventDefault();
+        formPages.setCustomValidity("How long is the book?");
+    }
+    else  {
+        event.preventDefault();
+        
+    addBooktoLibrary(new Book(form.title.value,form.author.value,form.number.value,form.checkbox.checked))
+    dialog.close();
+    showBooks();
+    }
+    
+    formTitle.reportValidity();
+    formAuthor.reportValidity();
+    formPages.reportValidity();
+    
+
+})
+
+submitButton.addEventListener("click",()=>{
+    
+})
+ /* submitButton.addEventListener("click",()=>{
+    if (formAuthor.checkValidity()==false || formTitle.checkValidity()==false || formPages.checkValidity() ==false){
+        event.preventDefault();
+    }
+}) 
    
 
 
-
+// when submit button is pressed, submit the data only if eerything is ok (check), but if someth_ing isnt ok, show the browser error messages
 
 /*
 addButton.addEventListener("click",()=>{
@@ -140,6 +193,6 @@ else {
         -figure oput positioning
 
 
-            
+       button for the hover effect with an svg inside of it ez win     
 
 */
