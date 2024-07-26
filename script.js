@@ -12,7 +12,7 @@ function addBooktoLibrary(object){
      library.push(object);
 }
 
-const book1 = new Book("Cool book","cool guy",42,false);
+/* const book1 = new Book("Cool book","cool guy",42,false);
 addBooktoLibrary(book1);
 console.log(library);
 const book2 = new Book("Test","fr test",100000,true);
@@ -20,7 +20,7 @@ const book3 = new Book("Test"," test",100000,true);
 const book4 = new Book("Test","fr tedzqdzqst",100000,true);
 addBooktoLibrary(book2);
 addBooktoLibrary(book3);
-addBooktoLibrary(book4);
+addBooktoLibrary(book4); */
 
 let removeButtonId = 0;
 let itemToRemove = {
@@ -185,14 +185,14 @@ else {
         -add backdrop to cards
  THE DIALOG
         -add popup animation
-        -add 3 input with right font and auto text and right types
-        - add a checkbox thing
-        -set base width)
-        -add submit button and style it
-        add logic behind the submit button that adds the book
-        -figure oput positioning
+        
+        
+        
+        
+       
+       
 
 
-       button for the hover effect with an svg inside of it ez win     
+       
 
 */
