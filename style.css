@@ -10,7 +10,7 @@
 }
 @font-face {
     font-family: "outfit-medium";
-    src: url(/fonts/Outfit/static/Outfit-Medium.ttf);
+    src: url(fonts/Outfit/static/Outfit-Medium.ttf);
 }
 body{
     background-color: var(--secondary-color);
@@ -178,6 +178,10 @@ form h2{
     height:30px;
     background-color: white;
     border-width: 0px;
+
+}
+.close-btn:hover{
+    background-color: red;
 }
 .submit-btn{
     width:90%;
@@ -188,4 +192,7 @@ form h2{
     border-radius: 5px;
     height:70%;
 
+}
+.submit-btn:hover{
+    background-color: rgb(1, 104, 1);
 }
